@@ -114,18 +114,18 @@
 
   /* ---------------- screens ---------------- */
   var SCREEN_TITLES = {
-    home: 'MOKI - Live Multiplayer Quiz Party',
-    quick: 'Quick Play - MOKI',
-    solosetup: 'Play Alone - MOKI',
-    create: 'Quiz Builder - MOKI',
-    join: 'Join a Game - MOKI',
-    customize: 'My MOKI - MOKI',
-    profile: 'Profile - MOKI',
-    hostlobby: 'Host Lobby - MOKI',
-    playerlobby: 'Lobby - MOKI',
-    question: 'Question - MOKI',
-    reveal: 'Results - MOKI',
-    final: 'Final Results - MOKI'
+    home: 'MokiRush - Live Multiplayer Quiz Party',
+    quick: 'Quick Play - MokiRush',
+    solosetup: 'Play Alone - MokiRush',
+    create: 'Quiz Builder - MokiRush',
+    join: 'Join a Game - MokiRush',
+    customize: 'My MOKI - MokiRush',
+    profile: 'Profile - MokiRush',
+    hostlobby: 'Host Lobby - MokiRush',
+    playerlobby: 'Lobby - MokiRush',
+    question: 'Question - MokiRush',
+    reveal: 'Results - MokiRush',
+    final: 'Final Results - MokiRush'
   };
   var current = 'home';
   function show(name) {
@@ -142,7 +142,7 @@
     el.removeAttribute('aria-hidden');
     el.hidden = false;
     if ('inert' in el) el.inert = false;
-    document.title = SCREEN_TITLES[name] || 'MOKI - Live Multiplayer Quiz Party';
+    document.title = SCREEN_TITLES[name] || 'MokiRush - Live Multiplayer Quiz Party';
     current = name;
     window.scrollTo(0, 0);
     if (name === 'home') paintHome();

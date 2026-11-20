@@ -536,10 +536,10 @@ const PAGE_HTML = `<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#3A17A0">
-<title>MOKI - Live Multiplayer Quiz Party</title>
-<meta name="description" content="MOKI is a fast, colourful live multiplayer knowledge game. Make a quiz about anything, share a 6-digit PIN and play together.">
+<title>MokiRush - Live Multiplayer Quiz Party</title>
+<meta name="description" content="MokiRush is a fast, colourful live multiplayer knowledge game. Make a quiz about anything, share a 6-digit PIN and play together.">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="MOKI">
+<meta name="apple-mobile-web-app-title" content="MokiRush">
 <style>
 /* ---------- Baloo 2 (bundled, so the game looks the same offline) ----------
    Baloo 2 is a variable font: one file per subset covers weights 600-800.
@@ -596,14 +596,18 @@ body{
 /* ---------- brand ---------- */
 .brand{display:flex;align-items:center;gap:12px;justify-content:center;user-select:none}
 .brand h1{
-  margin:0;font-size:clamp(52px,13vw,120px);line-height:.9;letter-spacing:-2px;
+  margin:0;font-size:clamp(32px,8.5vw,76px);line-height:.9;letter-spacing:-1px;
   color:#fff; text-shadow:0 6px 0 #2A1170, 0 10px 0 rgba(0,0,0,.25);
 }
 .brand h1 span{display:inline-block;animation:bounceLetter 2.4s ease-in-out infinite}
-.brand h1 span:nth-child(1){color:var(--sun);animation-delay:0s}
-.brand h1 span:nth-child(2){color:var(--coral);animation-delay:.12s}
-.brand h1 span:nth-child(3){color:var(--sky);animation-delay:.24s}
-.brand h1 span:nth-child(4){color:var(--mint);animation-delay:.36s}
+.brand h1 span:nth-child(8n+1){color:var(--sun);animation-delay:0s}
+.brand h1 span:nth-child(8n+2){color:var(--coral);animation-delay:.12s}
+.brand h1 span:nth-child(8n+3){color:var(--sky);animation-delay:.24s}
+.brand h1 span:nth-child(8n+4){color:var(--mint);animation-delay:.36s}
+.brand h1 span:nth-child(8n+5){color:var(--sun);animation-delay:.48s}
+.brand h1 span:nth-child(8n+6){color:var(--coral);animation-delay:.6s}
+.brand h1 span:nth-child(8n+7){color:var(--sky);animation-delay:.72s}
+.brand h1 span:nth-child(8n+8){color:var(--mint);animation-delay:.84s}
 @keyframes bounceLetter{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-12px) rotate(-4deg)}}
 .tag{color:#EBE4FF;text-align:center;font-size:19px;margin:6px 0 26px;font-weight:600}
 
@@ -1195,7 +1199,7 @@ body.phone-play #s-question .q-reactions{display:none}
 <section id="s-home" class="screen active">
   <div class="wrap">
     <div style="height:10px"></div>
-    <div class="brand"><h1><span>M</span><span>O</span><span>K</span><span>I</span></h1></div>
+    <div class="brand"><h1><span>M</span><span>o</span><span>k</span><span>i</span><span>R</span><span>u</span><span>s</span><span>h</span></h1></div>
     <p class="tag">Quiz anything. Play together. Be the fastest MOKI in the room.</p>
 
     <div class="hero">
@@ -1445,7 +1449,7 @@ body.phone-play #s-question .q-reactions{display:none}
 <!-- ================= HOST LOBBY ================= -->
 <section id="s-hostlobby" class="screen">
   <div class="wrap">
-    <div class="topbar"><button class="btn ghost sm" id="hostQuit">✕ End</button><span class="role-badge host">HOST SCREEN</span><div class="mini" id="hostTitle">MOKI</div></div>
+    <div class="topbar"><button class="btn ghost sm" id="hostQuit">✕ End</button><span class="role-badge host">HOST SCREEN</span><div class="mini" id="hostTitle">MokiRush</div></div>
     <div class="card glass center">
       <p class="s" style="margin:0">Join at <b id="hostUrl"></b> with PIN</p>
       <div class="join-split">
@@ -1461,7 +1465,7 @@ body.phone-play #s-question .q-reactions{display:none}
         <span class="stat" style="max-width:150px"><b id="hostCount">0</b><span>PLAYERS</span></span>
         <span class="stat" style="max-width:150px"><b id="hostQCount">0</b><span>QUESTIONS</span></span>
       </div>
-      <button class="btn big gold" id="btnStartGame" style="margin-top:14px">Start MOKI!</button>
+      <button class="btn big gold" id="btnStartGame" style="margin-top:14px">Start MokiRush!</button>
     </div>
     <div id="hostTeams" class="team-strip" hidden></div>
     <div class="player-grid" id="hostPlayers"></div>
@@ -2735,18 +2739,18 @@ const TOPIC_IMAGES = {"animals":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQAB
 
   /* ---------------- screens ---------------- */
   var SCREEN_TITLES = {
-    home: 'MOKI - Live Multiplayer Quiz Party',
-    quick: 'Quick Play - MOKI',
-    solosetup: 'Play Alone - MOKI',
-    create: 'Quiz Builder - MOKI',
-    join: 'Join a Game - MOKI',
-    customize: 'My MOKI - MOKI',
-    profile: 'Profile - MOKI',
-    hostlobby: 'Host Lobby - MOKI',
-    playerlobby: 'Lobby - MOKI',
-    question: 'Question - MOKI',
-    reveal: 'Results - MOKI',
-    final: 'Final Results - MOKI'
+    home: 'MokiRush - Live Multiplayer Quiz Party',
+    quick: 'Quick Play - MokiRush',
+    solosetup: 'Play Alone - MokiRush',
+    create: 'Quiz Builder - MokiRush',
+    join: 'Join a Game - MokiRush',
+    customize: 'My MOKI - MokiRush',
+    profile: 'Profile - MokiRush',
+    hostlobby: 'Host Lobby - MokiRush',
+    playerlobby: 'Lobby - MokiRush',
+    question: 'Question - MokiRush',
+    reveal: 'Results - MokiRush',
+    final: 'Final Results - MokiRush'
   };
   var current = 'home';
   function show(name) {
@@ -2763,7 +2767,7 @@ const TOPIC_IMAGES = {"animals":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQAB
     el.removeAttribute('aria-hidden');
     el.hidden = false;
     if ('inert' in el) el.inert = false;
-    document.title = SCREEN_TITLES[name] || 'MOKI - Live Multiplayer Quiz Party';
+    document.title = SCREEN_TITLES[name] || 'MokiRush - Live Multiplayer Quiz Party';
     current = name;
     window.scrollTo(0, 0);
     if (name === 'home') paintHome();
@@ -4077,7 +4081,7 @@ function newPin() {
  * ------------------------------------------------------------------ */
 function validateQuiz(raw) {
   if (!raw || typeof raw !== 'object') return { error: 'Quiz data missing.' };
-  const title = clean(raw.title, LIMITS.title) || 'Untitled MOKI Quiz';
+  const title = clean(raw.title, LIMITS.title) || 'Untitled MokiRush Quiz';
   const topic = clean(raw.topic, 40) || 'General';
   if (!Array.isArray(raw.questions) || raw.questions.length === 0) {
     return { error: 'Add at least one question before starting.' };
@@ -4203,7 +4207,7 @@ function destroyGame(pin, reason) {
   const game = games.get(pin);
   if (!game) return;
   clearTimers(game);
-  io.to('g:' + pin).emit('game:closed', { reason: reason || 'The host ended this MOKI game.' });
+  io.to('g:' + pin).emit('game:closed', { reason: reason || 'The host ended this MokiRush game.' });
   games.delete(pin);
 }
 
@@ -4439,7 +4443,7 @@ io.on('connection', socket => {
     const pin = clean(payload && payload.pin, 6);
     if (!/^\d{6}$/.test(pin)) return cb({ ok: false, error: 'PIN must be 6 digits.' });
     const game = games.get(pin);
-    if (!game) return cb({ ok: false, error: 'No MOKI game found with that PIN.' });
+    if (!game) return cb({ ok: false, error: 'No MokiRush game found with that PIN.' });
 
     const nick = clean(payload && payload.nick, LIMITS.nick);
     if (nick.length < 2) return cb({ ok: false, error: 'Nickname needs at least 2 characters.' });
@@ -4717,7 +4721,7 @@ app.get('/api/pin/:pin', (req, res) => {
 
 app.get('/api/topics', (_req, res) => res.json(topics()));
 
-// Offline "MOKI Spark" generator - no external or paid API involved.
+// Offline "MokiRush Spark" generator - no external or paid API involved.
 app.post('/api/spark', sparkLimit, (req, res) => {
   const topic = clean(req.body && req.body.topic, 40);
   const count = Math.min(10, Math.max(1, Number(req.body && req.body.count) || 5));
@@ -4725,7 +4729,7 @@ app.post('/api/spark', sparkLimit, (req, res) => {
   if (!questions.length) {
     return res.status(422).json({
       ok: false,
-      error: 'MOKI Spark has no ready-made questions for "' + topic + '" yet - write your own below.'
+      error: 'MokiRush Spark has no ready-made questions for "' + topic + '" yet - write your own below.'
     });
   }
   res.json({ ok: true, topic, questions });
@@ -4768,7 +4772,7 @@ const PORT = process.env.PORT || 3000;
    initialise the server still starts - live games are in memory and keep
    working; only quiz codes are unavailable. */
 server.listen(PORT, () => {
-  console.log('MOKI (single file) running on http://localhost:' + PORT);
+  console.log('MokiRush (single file) running on http://localhost:' + PORT);
   console.log('Have other players open your LAN/public address and enter the PIN shown.');
 });
 

@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: moki
+    name: mokirush
     env: node
     plan: free
     buildCommand: npm install

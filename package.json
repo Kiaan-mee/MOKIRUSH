@@ -1,7 +1,7 @@
 {
-  "name": "moki",
+  "name": "mokirush",
   "version": "1.0.0",
-  "description": "MOKI - a fast, colorful live multiplayer knowledge game",
+  "description": "MokiRush - a fast, colorful live multiplayer knowledge game",
   "main": "server.js",
   "engines": {
     "node": ">=18"

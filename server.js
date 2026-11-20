@@ -75,7 +75,7 @@ function newPin() {
  * ------------------------------------------------------------------ */
 function validateQuiz(raw) {
   if (!raw || typeof raw !== 'object') return { error: 'Quiz data missing.' };
-  const title = clean(raw.title, LIMITS.title) || 'Untitled MOKI Quiz';
+  const title = clean(raw.title, LIMITS.title) || 'Untitled MokiRush Quiz';
   const topic = clean(raw.topic, 40) || 'General';
   if (!Array.isArray(raw.questions) || raw.questions.length === 0) {
     return { error: 'Add at least one question before starting.' };
@@ -201,7 +201,7 @@ function destroyGame(pin, reason) {
   const game = games.get(pin);
   if (!game) return;
   clearTimers(game);
-  io.to('g:' + pin).emit('game:closed', { reason: reason || 'The host ended this MOKI game.' });
+  io.to('g:' + pin).emit('game:closed', { reason: reason || 'The host ended this MokiRush game.' });
   games.delete(pin);
 }
 
@@ -437,7 +437,7 @@ io.on('connection', socket => {
     const pin = clean(payload && payload.pin, 6);
     if (!/^\d{6}$/.test(pin)) return cb({ ok: false, error: 'PIN must be 6 digits.' });
     const game = games.get(pin);
-    if (!game) return cb({ ok: false, error: 'No MOKI game found with that PIN.' });
+    if (!game) return cb({ ok: false, error: 'No MokiRush game found with that PIN.' });
 
     const nick = clean(payload && payload.nick, LIMITS.nick);
     if (nick.length < 2) return cb({ ok: false, error: 'Nickname needs at least 2 characters.' });
@@ -715,7 +715,7 @@ app.get('/api/pin/:pin', (req, res) => {
 
 app.get('/api/topics', (_req, res) => res.json(BANK.topics()));
 
-// Offline "MOKI Spark" generator - no external or paid API involved.
+// Offline "MokiRush Spark" generator - no external or paid API involved.
 app.post('/api/spark', sparkLimit, (req, res) => {
   const topic = clean(req.body && req.body.topic, 40);
   const count = Math.min(10, Math.max(1, Number(req.body && req.body.count) || 5));
@@ -723,7 +723,7 @@ app.post('/api/spark', sparkLimit, (req, res) => {
   if (!questions.length) {
     return res.status(422).json({
       ok: false,
-      error: 'MOKI Spark has no ready-made questions for "' + topic + '" yet - write your own below.'
+      error: 'MokiRush Spark has no ready-made questions for "' + topic + '" yet - write your own below.'
     });
   }
   res.json({ ok: true, topic, questions });
@@ -766,12 +766,12 @@ const PORT = process.env.PORT || 3000;
    initialise the server still starts - live games are in memory and keep
    working; only quiz codes are unavailable. */
 store.init()
-  .then(where => console.log('MOKI quiz library: ' + where))
-  .catch(err => console.error('MOKI quiz library unavailable:', err.message))
+  .then(where => console.log('MokiRush quiz library: ' + where))
+  .catch(err => console.error('MokiRush quiz library unavailable:', err.message))
   .finally(() => {
     server.listen(PORT, () => {
-      console.log('MOKI running on http://localhost:' + PORT);
+      console.log('MokiRush running on http://localhost:' + PORT);
       const keep = waker.start();
-      if (!keep.enabled) console.log('MOKI keep-awake: off (' + keep.reason + ')');
+      if (!keep.enabled) console.log('MokiRush keep-awake: off (' + keep.reason + ')');
     });
   });

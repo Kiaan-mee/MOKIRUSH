@@ -1,6 +1,6 @@
 {
-  "name": "MOKI - Live Multiplayer Quiz",
-  "short_name": "MOKI",
+  "name": "MokiRush - Live Multiplayer Quiz",
+  "short_name": "MokiRush",
   "description": "A fast, colourful live multiplayer knowledge game. Make a quiz about anything, share a PIN and play together.",
   "start_url": "/",
   "scope": "/",
